@@ -8,9 +8,9 @@ from datetime import datetime
 
 from flask_login import UserMixin
 
-@login.user_loader
-def load_user(user_id):
-    return Lawyer.query.get(int(user_id)) # This connects to the lawyer class that will be built here
+@login.lawyer_loader
+def load_lawyer(lawyer_id):
+    return Lawyer.query.get(int(lawyer_id)) # This connects to the lawyer class that will be built here
 
 # Lawyer class - Mike
 

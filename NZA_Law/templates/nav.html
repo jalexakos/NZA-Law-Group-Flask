@@ -7,24 +7,16 @@
     <nav class="navbar">
         
 <!-- <li><a href="index.html">home</a></li> -->
-          <ul>
-            <li><a href="{{ url_for('who') }}">Who we are </a></li> <!-- "who.html"-->
-            <li><a href="{{ url_for('what') }}">what we do</a></li> <!--"what.html" -->
-            <li><a href="https://www.theonion.com/">news & events</a></li> <!-- -->
-            <li><a href="https://en.wikipedia.org/wiki/Carmen_Sandiego">where we work</a></li> <!-- -->
-            <li><a href="{{ url_for('contact') }}">contact us</a></li> <!--"contact.html" -->
-            <li>
-                <a class="nav-link" href="{{ url_for('register') }}">Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('createposts') }}">Create a Post</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="{{ url_for('login') }}" >Login</a>
-              </li>    
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('logout') }}" >Logout</a>
-              </li>
-          </ul>
+        <ul>
+        <li><a href="{{ url_for('who') }}">Who we are </a></li> <!-- "who.html"-->
+        <li><a href="{{ url_for('what') }}">what we do</a></li> <!--"what.html" -->
+        <li><a href="https://www.theonion.com/">news & events</a></li> <!-- -->
+        <li><a href="https://en.wikipedia.org/wiki/Carmen_Sandiego">where we work</a></li> <!-- -->
+        <li><a href="{{ url_for('contact') }}">contact us</a></li> <!--"contact.html" -->
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+        <li><a href="{{ url_for('createposts') }}">Create a Post</a></li>
+        <li><a href="{{ url_for('login') }}" >Login</a></li>    
+        <li><a href="{{ url_for('logout') }}" >Logout</a></li>
+        </ul>
     </nav>   
 </header>
