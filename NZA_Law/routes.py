@@ -34,7 +34,7 @@ def create_cases():
         db.session.commit()
         return redirect(url_for('create_cases'))
     cases = Case.query.all()
-    return render_template('create_cases.html', form=form)
+    return render_template('create_cases.html', form=form, cases=cases)
 
 @app.route('/cases/<int:case_id>')
 
