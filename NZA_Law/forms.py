@@ -7,6 +7,10 @@ from wtforms.validators import DataRequired, EqualTo, Email
 
 
 # CaseNotesForm class - Leland
+class CaseNotesForm(FlaskForm):
+    caseNum = TextAreaField('Case Number', validators=[DataRequired()])
+    caseNotes = TextAreaField('Case Notes', validators=[DataRequired()])
+    submit = SubmitField()
 
 
 # LoginForm class - Josh

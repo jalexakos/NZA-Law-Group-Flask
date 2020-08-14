@@ -19,6 +19,24 @@ def home():
 
 
 # Create Case route - Leland
+@app.route('/create_cases', methods=['GET', "POST"])
+@login_required
+def create_cases():
+    form = CaseNotesForm()
+    if request.method == 'POST' and form.validate():
+        caseNum = form.caseNum.data
+        caseNotes = form.caseNotes.data
+        user_id = current_user.id 
+        print("\n", caseNum, caseNotes)
+        case = case(caseNum, caseNotes, user_id)
+
+        db.session.add(case)
+        db.session.commit()
+        return redirect(url_for('create_cases'))
+    cases = Case.query.all()
+    return render_template('create_cases.html', form=form)
+
+@app.route('/cases/<int:case_id>')
 
 
 # Retrieve Case route - Stephanie
