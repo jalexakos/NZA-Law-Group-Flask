@@ -1,0 +1,673 @@
+* {                  /**/
+    margin: 0;                  /**/
+    padding: 0;                  /**/
+    font-family: 'Source Sans Pro', sans-serif;                  /**/
+  }
+  
+  body, html {
+      background-image: url(../images/nza_background.jpg);
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    /* -------------------------------------General Gird Layout--------------------------------------------------- */
+    .page {
+      display: grid;
+      width: 100vw;
+      height: 100vh;
+      grid-template-columns: 20% 60% 20%;
+      /* grid-template-rows: 2fr 1fr 6fr 2fr; */
+      grid-template-areas: 
+          "side1 center side2"
+    }
+    
+    .blank1 {
+      grid-area: side1;
+      /* background-color: red; */
+    }
+    .blank2 {
+      grid-area: side2;
+      /* background-color:blue; */
+    }
+    
+    .center {
+      grid-area: center;
+      background-color: whitesmoke;
+      display: grid;
+      width: 100%;
+      height: 98%;
+      grid-template-rows: 200px auto 120px;
+      grid-template-areas: 
+        "header"
+        "content"
+        "footer";
+    }
+    
+    div.center header {
+      grid-area: header;
+      background-color: whitesmoke;
+      display: grid;
+      /* grid-auto-columns: max-content; */
+      width: auto;
+      height: 135px;      /**/
+      margin: 50px ;
+      grid-template-rows: 100px;
+      grid-template-areas: 
+        "logo",
+        "navbar";
+    }
+    
+    .content {
+      grid-area: content;
+      background-color: whitesmoke;
+      /* grid-column-start: 15%; */
+      /* grid-column-end: 15%; */
+      display: grid;
+      /* width: 100%;
+      height: 100%; */
+      margin: 50px 50px 30px 50px;
+      grid-template-columns: 75% 25%;
+      grid-template-areas: 
+        "content-text sidebar";
+    }
+    
+    div.center footer {
+      grid-area: footer;
+      background-color: whitesmoke;
+      display: grid;
+      width: auto;
+      height: 70px;
+      margin:0 50px ;
+      grid-template-rows: 50px 20px;
+      grid-template-areas: 
+        "links" 
+        "copyright";
+    }
+    /* -----------------------------------------------------End of Grid Layout------------------------------------ */
+    
+    
+    
+    
+    /*--------------------------------------------------header--------------------------------------------------- */
+    
+    div.logo img{
+      grid-area: logo;
+      background-color: whitesmoke;
+      /* height: 100%; */
+    }
+    
+    /* ---------------------------Navbar------------------------------ */
+    
+    header nav {
+      width: 100%;
+      background-color: whitesmoke;
+      border-top: 2px solid black;
+      border-bottom: 2px solid black;
+      margin: 10px auto;
+    }
+    
+    header ul {
+      display: flex;
+      justify-content: space-around;
+      list-style-type: none;
+      margin: 0 auto;
+      padding: 0;
+      overflow: hidden;
+      background-color: whitesmoke;
+      text-align: center;
+    }
+    
+    header li {
+      padding-right: 5%;                  /**/
+      border-right:1px solid rgb(135, 146, 157);
+    }
+    
+    header li:last-child {
+      padding: 0;                  /**/
+      border-right: none;
+    }
+    
+    header li a {
+    /* font-family: Arial, Helvetica, sans-serif; */                  /**/
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+      display: block;
+      color: black;
+      margin: 0 auto;
+      padding: 0px 16px;                  /**/
+      text-decoration: none;
+    }
+    
+    header nav li a:hover:not(.active) {
+      background-color:rgb(135, 146, 157);
+      border: 2px solid black;
+      color: whitesmoke;
+      border-radius: 10%;
+    }
+    
+    header.active {
+      background-color: #4CAF50;
+    }
+    
+    /* ---------------------------------------------content--------------------------------------------------- */
+    /* ----------------------------------Sidebar------------------------- */
+    /* content.sidebars {
+      border: rgb(128, 0, 0);
+      width: 500px;
+    } */
+    div.sidebar {
+      grid-area: sidebar;
+      height: 400px;
+      width: 100%;
+      margin: 0 0 0 10px;
+      background-color: whitesmoke;
+      /* After adjust the sidebar to the right, I am editing it so only the News Feed has a maroon background. */
+      grid-template-rows: 70% 30%;
+      grid-template-areas: 
+      "News-Feed Contact-Info";
+    }
+    
+    /* News Feed - Sidebar derivative */
+    
+    div.news-feed {
+      grid-area: News-Feed;
+      background-color: rgb(128, 0, 0);
+      height: 70%;
+      width: 100%;
+      overflow-y: auto;
+      scrollbar-color: grey lightgrey;
+    }
+    
+    /* News Feed - header */
+  
+    h6#news-feed-header {
+      font-size: 110%;
+      margin: 0px;
+      margin-top: 5px;
+      margin-left: 7px;
+      color: whitesmoke;
+    }
+  
+    /* News Feed - divider */
+  
+    hr#news-feed-divider {
+      width: 75%;
+      margin-left: 5%;
+      margin-right: 20%;
+      color: whitesmoke;
+    }
+    
+    /* News Feed - content */
+  
+    p.news-feed-content {
+      color: whitesmoke;
+      margin-left: 7px;
+      margin-right: 12px;
+      margin-top: 10px;
+      font-size: 70%;
+    }
+  
+    /* Contact Info - Sidebar derivative */
+  
+    div.contact-info {
+      grid-area: Contact-Info;
+      height: 30%;
+      margin-top: 30%;
+      margin-left: 4%;
+      margin-bottom: 20%;
+    }
+  
+    /* Contact Info - name */
+  
+    p#contact-info-name {
+      font-size: 70%;
+      font-weight: bold;
+      margin-bottom: 0%;
+    }
+  
+    /* Contact Info - details */
+  
+    p.contact-info-details {
+      font-size: 70%;
+      margin: 0%;
+    }
+  
+    /* Contact Info - email */
+  
+    a#contact-info-email {
+      color: rgb(128, 0, 0);
+    }
+  
+    /* -------------------------------content-text----------------------- */
+    .content-text {
+      grid-area: content-text;
+      grid-template-rows: 4fr 1fr;
+      grid-template-areas: "content-image content-welcome";
+      width: 97.5%;
+      height: 100%;
+      margin-left: 2.5%;
+      /* background-color: rgba(39, 37, 37, 0.308); */
+    
+    }
+    
+    /* Content Text - Image */
+  
+    img#content-image-fwd-thinking {
+      grid-area: content-image;
+      width: 95%;
+      height: 100%;
+    }
+    
+    /* Content Text - Welcome */
+    
+    div.content-welcome {
+      grid-area: content-welcome;
+      width: 90%;
+      height: 95%;
+      margin-top: 5%;
+      margin-left: 1%;
+    }
+  
+    /* Content Text - Welcome Header */
+  
+    p.content-text-welcome-header {
+      font-size: 80%;
+      font-weight: bold;
+    }
+  
+    /* Content Text - Welcome Paragraph */
+    
+    p.content-text-welcome-para {
+      font-size: 80%;
+      justify-content: left;
+    }
+  
+    /*-----------------------------------------------------------footer section---------------------------------------- */
+    /* -------------------------------links----------------------------- */
+    footer nav {
+      width: 100%;
+      background-color: whitesmoke;
+      border-top: 2px solid black;
+      /* border-bottom: 2px solid black; */
+      margin: 0 auto;
+    }
+    
+    footer ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: whitesmoke;
+      text-align: center;
+    }
+    
+    footer li {
+      border-right:1px solid whitesmoke;
+    }
+    
+    footer li:last-child {
+      border-right: none;
+    }
+    
+    footer li a {
+        /* font-family: Arial, Helvetica, sans-serif; */                  /**/
+      font-weight: 500;
+      text-transform: uppercase;
+      display: block;
+      color: black;
+      margin: 0 auto;
+      padding: 14px 2px;
+      text-decoration: none;
+    }
+    
+    footer nav li a:hover:not(.active) {
+      background-color:rgb(135, 146, 157);
+      border: 2px solid whitesmoke;
+      border-radius: 10%;
+    }
+    
+    footer.active {
+      background-color: #4CAF50;
+    }
+    /* ------------------------copyright-------------------------------- */
+    .copyright h4{
+      text-align: center;
+      color: rgba(135, 146, 157, .5);
+    }                  /**/
+  /* margin: 0;                  /**/
+  /* padding: 0;                   */
+  /* font-family: 'Source Sans Pro', sans-serif;                   */
+ */
+
+/* body, html {
+    background-image: url(../images/nza_background.jpg);
+    font-family: 'Source Sans Pro', sans-serif;
+  } */
+  /* -------------------------------------General Gird Layout--------------------------------------------------- */
+  .page {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 20% 60% 20%;
+    /* grid-template-rows: 2fr 1fr 6fr 2fr; */
+    grid-template-areas: 
+        "side1 center side2"
+  }
+  
+  .blank1 {
+    grid-area: side1;
+    /* background-color: red; */
+  }
+  .blank2 {
+    grid-area: side2;
+    /* background-color:blue; */
+  }
+  
+  .center {
+    grid-area: center;
+    background-color: whitesmoke;
+    display: grid;
+    width: 100%;
+    height: 98%;
+    grid-template-rows: 200px auto 120px;
+    grid-template-areas: 
+      "header"
+      "content"
+      "footer";
+  }
+  
+  div.center header {
+    grid-area: header;
+    background-color: whitesmoke;
+    display: grid;
+    /* grid-auto-columns: max-content; */
+    width: auto;
+    height: 135px;      /**/
+    margin: 50px ;
+    grid-template-rows: 100px;
+    grid-template-areas: 
+      "logo",
+      "navbar";
+  }
+  
+  .content {
+    grid-area: content;
+    background-color: whitesmoke;
+    /* grid-column-start: 15%; */
+    /* grid-column-end: 15%; */
+    display: grid;
+    /* width: 100%;
+    height: 100%; */
+    margin: 50px 50px 30px 50px;
+    grid-template-columns: 75% 25%;
+    grid-template-areas: 
+      "content-text sidebar";
+  }
+  
+  div.center footer {
+    grid-area: footer;
+    background-color: whitesmoke;
+    display: grid;
+    width: auto;
+    height: 70px;
+    margin:0 50px ;
+    grid-template-rows: 50px 20px;
+    grid-template-areas: 
+      "links" 
+      "copyright";
+  }
+  /* -----------------------------------------------------End of Grid Layout------------------------------------ */
+  
+  
+  
+  
+  /*--------------------------------------------------header--------------------------------------------------- */
+  
+  div.logo img{
+    grid-area: logo;
+    background-color: whitesmoke;
+    /* height: 100%; */
+  }
+  
+  /* ---------------------------Navbar------------------------------ */
+  
+  header nav {
+    width: 100%;
+    background-color: whitesmoke;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    margin: 10px auto;
+  }
+  
+  header ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: whitesmoke;
+    text-align: center;
+  }
+  
+  header li {
+    padding-right: 5%;                  /**/
+    border-right:1px solid rgb(135, 146, 157);
+  }
+  
+  header li:last-child {
+    padding: 0;                  /**/
+    border-right: none;
+  }
+  
+  header li a {
+  /* font-family: Arial, Helvetica, sans-serif; */                  /**/
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    color: black;
+    margin: 0 auto;
+    padding: 0px 16px;                  /**/
+    text-decoration: none;
+  }
+  
+  header nav li a:hover:not(.active) {
+    background-color:rgb(135, 146, 157);
+    border: 2px solid black;
+    color: whitesmoke;
+    border-radius: 10%;
+  }
+  
+  header.active {
+    background-color: #4CAF50;
+  }
+  
+  /* ---------------------------------------------content--------------------------------------------------- */
+  /* ----------------------------------Sidebar------------------------- */
+  /* content.sidebars {
+    border: rgb(128, 0, 0);
+    width: 500px;
+  } */
+  div.sidebar {
+    grid-area: sidebar;
+    height: 400px;
+    width: 100%;
+    margin: 0 0 0 10px;
+    background-color: whitesmoke;
+    /* After adjust the sidebar to the right, I am editing it so only the News Feed has a maroon background. */
+    grid-template-rows: 70% 30%;
+    grid-template-areas: 
+    "News-Feed Contact-Info";
+  }
+  
+  /* News Feed - Sidebar derivative */
+  
+  div.news-feed {
+    grid-area: News-Feed;
+    background-color: rgb(128, 0, 0);
+    height: 70%;
+    width: 100%;
+    overflow-y: auto;
+    scrollbar-color: grey lightgrey;
+  }
+  
+  /* News Feed - header */
+
+  h6#news-feed-header {
+    font-size: 110%;
+    margin: 0px;
+    margin-top: 5px;
+    margin-left: 7px;
+    color: whitesmoke;
+  }
+
+  /* News Feed - divider */
+
+  hr#news-feed-divider {
+    width: 75%;
+    margin-left: 5%;
+    margin-right: 20%;
+    color: whitesmoke;
+  }
+  
+  /* News Feed - content */
+
+  p.news-feed-content {
+    color: whitesmoke;
+    margin-left: 7px;
+    margin-right: 12px;
+    margin-top: 10px;
+    font-size: 70%;
+  }
+
+  /* Contact Info - Sidebar derivative */
+
+  div.contact-info {
+    grid-area: Contact-Info;
+    height: 30%;
+    margin-top: 30%;
+    margin-left: 4%;
+    margin-bottom: 20%;
+  }
+
+  /* Contact Info - name */
+
+  p#contact-info-name {
+    font-size: 70%;
+    font-weight: bold;
+    margin-bottom: 0%;
+  }
+
+  /* Contact Info - details */
+
+  p.contact-info-details {
+    font-size: 70%;
+    margin: 0%;
+  }
+
+  /* Contact Info - email */
+
+  a#contact-info-email {
+    color: rgb(128, 0, 0);
+  }
+
+  /* -------------------------------content-text----------------------- */
+  .content-text {
+    grid-area: content-text;
+    grid-template-rows: 4fr 1fr;
+    grid-template-areas: "content-image content-welcome";
+    width: 97.5%;
+    height: 100%;
+    margin-left: 2.5%;
+    /* background-color: rgba(39, 37, 37, 0.308); */
+  
+  }
+  
+  /* Content Text - Image */
+
+  img#content-image-fwd-thinking {
+    grid-area: content-image;
+    width: 95%;
+    height: 100%;
+  }
+  
+  /* Content Text - Welcome */
+  
+  div.content-welcome {
+    grid-area: content-welcome;
+    width: 90%;
+    height: 95%;
+    margin-top: 5%;
+    margin-left: 1%;
+  }
+
+  /* Content Text - Welcome Header */
+
+  p.content-text-welcome-header {
+    font-size: 80%;
+    font-weight: bold;
+  }
+
+  /* Content Text - Welcome Paragraph */
+  
+  p.content-text-welcome-para {
+    font-size: 80%;
+    justify-content: left;
+  }
+
+  /*-----------------------------------------------------------footer section---------------------------------------- */
+  /* -------------------------------links----------------------------- */
+  footer nav {
+    width: 100%;
+    background-color: whitesmoke;
+    border-top: 2px solid black;
+    /* border-bottom: 2px solid black; */
+    margin: 0 auto;
+  }
+  
+  footer ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: whitesmoke;
+    text-align: center;
+  }
+  
+  footer li {
+    border-right:1px solid whitesmoke;
+  }
+  
+  footer li:last-child {
+    border-right: none;
+  }
+  
+  footer li a {
+      /* font-family: Arial, Helvetica, sans-serif; */                  /**/
+    font-weight: 500;
+    text-transform: uppercase;
+    display: block;
+    color: black;
+    margin: 0 auto;
+    padding: 14px 2px;
+    text-decoration: none;
+  }
+  
+  footer nav li a:hover:not(.active) {
+    background-color:rgb(135, 146, 157);
+    border: 2px solid whitesmoke;
+    border-radius: 10%;
+  }
+  
+  footer.active {
+    background-color: #4CAF50;
+  }
+  /* ------------------------copyright-------------------------------- */
+  .copyright h4{
+    text-align: center;
+    color: rgba(135, 146, 157, .5);
+  }                  /**/

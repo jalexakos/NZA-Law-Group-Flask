@@ -10,3 +10,27 @@ from flask import render_template, request, redirect, url_for
 # Flask Login import
 from flask_login import login_required, login_user, current_user, logout_user
 
+# Home route - Josh
+@app.route('/')
+def home():
+    return render_template("index.html")
+
+# Register route - Mike
+
+
+# Create Case route - Leland
+
+
+# Retrieve Case route - Stephanie
+
+
+# Updating Case route - Stephanie
+
+
+# Deleting Case route - Stephanie
+
+
+# Login route - Josh
+
+
+# Logout route - Josh

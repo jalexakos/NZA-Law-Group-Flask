@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="..static/css/who_styles.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+        </style>
+
+
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="page">
+            <div class="blank1"></div>
+            <div class="center">
+                {% include 'nav.html' %}
+                <div class="content">
+                    <div class="sidebar">
+                        <div class="">
+                            <h6 id="sidebar-header">WHO WE ARE</h6><br>
+                            <hr id="sidebar-divider"><br>
+                            <p id="sidebar-bullets">Welcome</p>
+                            <p id="sidebar-bullets">Attorneys</p>
+                            <p id="sidebar-bullets">Staff</p>
+                            <p id="sidebar-bullets">Reputation</p>
+                            <p id="sidebar-bullets">History</p>
+                            <img id="map" src="css/images/map.PNG" alt="Location">
+                            <b><p id="map-text">Where We Work</p></b>
+                            <p id="map-text">Find out more about our work<br>coverage area</p>
+                        </div>
+                    </div>
+                    <div class="content-text">
+                        <p>Who we are? That is one of the most important questions a prospective client can ask us. Our answer -<br> one of the most respected law firms in the country that cares about your case, your business, and solving<br>your problem. We invite you to get to know our attorneys better and understand the depth of experience<br>and talent we have in the links below.</p>
+                        <br>
+                        <img src="css/images/welcome.PNG" alt="Welcome">
+                        <img src="css/images/attorneys.PNG" alt="Attorneys">
+                        <img src="css/images/staff.PNG" alt="Staff">
+                        <img src="css/images/reputation.PNG" alt="Reputation">
+                        <img src="css/images/history.PNG" alt="History">
+                    </div>    
+                </div>
+                
+                <footer>
+                    {% include 'nav_footer.html' %}
+                </footer>
+            </div>
+            <div class="blank2"></div>
+        </div>
+    </body>
+</html>
