@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add a New Case</h1>
+
+<form action="" method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <fieldset>
+            {{ form.caseNum.label }}
+            {{ form.caseNum(class="form-control", placeholder='Case Name and Number') }}
+        </fieldset>
+        <fieldset>
+            {{ form.caseNotes.label }}
+            {{ form.caseNotes(class="form-control", placeholder='Case Notes') }}
+        </fieldset>
+        {{ form.submit(class='btn btn-success') }}        
+    </div>
+</form>
+
+<h2>Hello {{ current_user.username }}:</h2>
+<h3>The Current Cases are: </h3>
+
+{% if current_user.is_authenticated %}
+
+{% for case in cases %}
+    <div class="container">
+        <h3>
+            <a href="{{ url_for('case_detail', case_id = case.id) }}">{{ case.caseNum }}</a>
+        </h3>
+        <p>{{ case.caseNotes }}</p>
+    </div>
+{% endfor %}
+
+{% else %}
+<h2>That is not legal!</h2>
+
+{%endif %}
+
+
+
+{% endblock content %}
+
