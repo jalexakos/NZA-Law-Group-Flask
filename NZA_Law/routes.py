@@ -31,6 +31,24 @@ def home():
 
 
 # Login route - Josh
+@app.route('/login',methods=['GET','POST'])
+def login():
+    form = LoginForm()
+    if request.method == 'POST' and form.validate():
+        email = form.email.data
+        password = form.password.data
+        logged_user = Lawyer.query.filter(Lawyer.email == email).first()
+        if logged_user and check_password_hash(logged_user.passowrd, password):
+            login_user(logged_user)
+            return redirect(url_for('home'))
+        else:
+            return redirect(url_for('login'))
+    
+    return render_template('login.html',form=form)
 
 
 # Logout route - Josh
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
