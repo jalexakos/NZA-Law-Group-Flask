@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>This post belongs to: {{ case.lawyer.lawyer_id }}</h1>
+    <h3>Content:</h3>
+    <hr>
+    <h3>Title: {{ case.title }}</h3>
+    <p> {{ case.content }}</p>
+
+    <blockquote>Date Created: {{ case.date_created }}</blockquote>
+
+    <a href="{{ url_for('case_update', case_id = case.id) }}"><button class="btn btn-primary">Update</button></a>
+
+    <button type="button" class="btn btn-danger" data-toggle='modal' data-target="#dangerModal">Delete Post</button>
+
+    <div class="modal fade" id="dangerModal" tabindex="-1" role="dialog" aria-labelledby="dangerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="dangerModalLabel">Delete Post - Are You Sure?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              This action can't be reversed. Are you sure you want to delete?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <form action="{{ url_for('case_delete', case_id = case.id ) }}" method="case">
+                  <input type="submit" value="Delete?" class="btn btn-danger">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+</div>
+
+{% endblock content %}
