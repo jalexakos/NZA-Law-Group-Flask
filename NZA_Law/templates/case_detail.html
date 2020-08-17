@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-    <h1>This post belongs to: {{ case.lawyer.lawyer_id }}</h1>
+    <h1>This post belongs to: {{ case.author.lawyer_id }}</h1>
     <h3>Content:</h3>
     <hr>
     <h3>Title: {{ case.title }}</h3>
@@ -18,7 +18,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="dangerModalLabel">Delete Post - Are You Sure?</h5>
+              <h5 class="modal-title" id="dangerModalLabel">Delete Case - Are You Sure?</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -28,7 +28,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <form action="{{ url_for('case_delete', case_id = case.id ) }}" method="case">
+              <form action="{{ url_for('case_delete', case_id = case.id ) }}" method="POST">
                   <input type="submit" value="Delete?" class="btn btn-danger">
               </form>
             </div>

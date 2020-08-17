@@ -8,12 +8,12 @@
         {{ update_form.hidden_tag() }}
         <div class="form-group">
             <fieldset>
-                {{ update_form.title.label }}
-                {{ update_form.title(class="form-control", placeholder="Update Title") }}
+                {{ update_form.caseNum.label }}
+                {{ update_form.caseNum(class="form-control", placeholder="Update Title") }}
             </fieldset>
             <fieldset>
-                {{ update_form.content.label }}
-                {{ update_form.content(class="form-control", placeholder="Update Content", value="{{ case.content }}") }}
+                {{ update_form.caseNotes.label }}
+                {{ update_form.caseNotes(class="form-control", placeholder="Update Content", value="{{ case.content }}") }}
             </fieldset>
             <fieldset>
                 {{ update_form.submit(class="btn btn-primary") }}

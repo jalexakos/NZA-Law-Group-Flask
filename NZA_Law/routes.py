@@ -68,12 +68,12 @@ def case_update(case_id):
     update_form = CaseNotesForm()
 
     if request.method == 'POST' and update_form.validate():
-        title = update_form.title.data
-        content = update_form.content.data
-        lawyer_id = current_lawyer.id
+        caseNum = update_form.caseNum.data
+        caseNotes = update_form.caseNotes.data
+        lawyer_id = current_user.id
 
-        case.title = title
-        case.content = content
+        case.caseNum = caseNum
+        case.caseNotes = caseNotes
         case.lawyer_id = lawyer_id
 
 
