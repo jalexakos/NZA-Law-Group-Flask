@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h2>What would you like your case to say now?</h2>
+    <form action="" method="POST">
+        {{ update_form.hidden_tag() }}
+        <div class="form-group">
+            <fieldset>
+                {{ update_form.title.label }}
+                {{ update_form.title(class="form-control", placeholder="Update Title") }}
+            </fieldset>
+            <fieldset>
+                {{ update_form.content.label }}
+                {{ update_form.content(class="form-control", placeholder="Update Content", value="{{ case.content }}") }}
+            </fieldset>
+            <fieldset>
+                {{ update_form.submit(class="btn btn-primary") }}
+            </fieldset>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
